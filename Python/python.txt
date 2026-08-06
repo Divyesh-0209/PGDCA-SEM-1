@@ -1,2 +1,0 @@
-Hello!
-It's day one of my AI/ML Engineer journey.
