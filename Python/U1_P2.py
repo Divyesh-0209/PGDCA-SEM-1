@@ -6,6 +6,10 @@ while True:
     try:
         n=int(input("\nHow many students' details you want to enter (enter 0 to exit): "))
 
+        if not (os.path.exists("P2_data.json") and os.path.isfile("P2_data.json")):
+            with open("P2_data.json","w",encoding="utf-8") as file:
+            json.dump([], file, indent=4)
+        
         with open("P2_data.json", "r", encoding="utf-8") as file:
             data=json.load(file)
 
