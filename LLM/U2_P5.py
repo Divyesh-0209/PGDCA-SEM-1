@@ -49,7 +49,7 @@ while True:
             print("Current API call context/input size:",context_size)
             
             history[2]["input_tokens"]=usage["total_input_tokens"]
-            history[2]["output_tokens"]+=usage["total_output_tokens"]
+            history[2]["output_tokens"]=usage["total_output_tokens"]
 
             print("Total tokens used in current API call:",usage["total_tokens"])
 
