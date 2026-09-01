@@ -70,7 +70,7 @@ async def main():
                 context_size=history[2]["input_tokens"]+history[2]["output_tokens"]
 
                 if out_type=="y":
-                    print("\nAI response streaming:",end="",flush=True)
+                    print("\nAI response streaming: ",end="",flush=True)
                     dif=0                        
                     cunt=0
                     for event in interaction:
