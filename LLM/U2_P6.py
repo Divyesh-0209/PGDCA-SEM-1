@@ -4,13 +4,13 @@ import os, json, asyncio, time
 
 load_dotenv()
 
-CLIENT = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 FILE= "P6history.json"
 CONTEXT_LIMIT= 2000
 MODEL="gemini-3.5-flash-lite"
 
 #Async call function
 async def stream_gemini_interaction(prompt):
+    CLIENT = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
     print(f"Sending prompt: '{prompt}'\n--- Streaming Response ---")
     
     response_stream = await CLIENT.aio.interactions.create(
@@ -27,6 +27,7 @@ async def stream_gemini_interaction(prompt):
 #Main function.
 async def main():
 
+    CLIENT = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
     if not (os.path.exists(FILE) and os.path.isfile(FILE)):
         hst=[{"system_instruction":str()},list(),{"input_tokens":int(), "output_tokens":int()}]
         with open(FILE, "w", encoding="utf-8") as file:
