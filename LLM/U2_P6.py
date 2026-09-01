@@ -131,7 +131,7 @@ async def main():
 
     #Asynchronous call code
     try:
-        asyn_ch=input("Want this place asynchronous API call(y/n): ").strip().lower()
+        asyn_ch=input("\nWant this place asynchronous API call(y/n): ").strip().lower()
         if asyn_ch=='y':
             prompts = [
                 "Say 'Hi1'",
