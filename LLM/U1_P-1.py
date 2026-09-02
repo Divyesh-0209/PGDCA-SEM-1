@@ -37,22 +37,17 @@ while bool:
             case 1:
                 for d in Data["NLP"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 2:
                 for d in Data["Computer_Vision"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 3:
                 for d in Data["Speech_Processing"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 4:
                 for d in Data["Robotics"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 5:
                 bool = False
-                breakpoint
             case default:
                 print("Invalid Input! Try again")
     except:
