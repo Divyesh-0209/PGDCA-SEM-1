@@ -74,7 +74,7 @@ async def main():
                             continue
 
                     else:
-                        print(f"\nERROR: You reached the maximum number of requests per minute. Process will continue from the pending requests after {int(60-(time.time()-begin_time))} seconds.")
+                        print(f"\nALERT: You reached the maximum number of requests per minute. Process will continue from the pending requests after {int(60-(time.time()-begin_time))} seconds.")
                         await asyncio.sleep(int(60-(time.time()-begin_time)))
                         begin_time=time.time()
                         req_count=0
