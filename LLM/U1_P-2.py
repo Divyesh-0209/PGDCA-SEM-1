@@ -37,26 +37,20 @@ while bool:
             case 1:
                 for d in Data["GPT_4"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 2:
                 for d in Data["Claude_3"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 3:
                 for d in Data["Gemini"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 4:
                 for d in Data["Llama_3"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 5:
                 for d in Data["Mistral"].items():
                     print(f"{d[0]} : {d[1]}")
-                breakpoint
             case 6:
                 bool = False
-                breakpoint
             case default:
                 print("Invalid Input! Try again")
     except:
