@@ -16,14 +16,6 @@ def main():
     INPUT_COST=round(0.30/1000000,7)
     OUTPUT_COST=round(2.50/1000000,7)
 
-    REPORT={
-        "total_prompts_processed":0,
-        "successful_req":0,
-        "failed_req":0,
-        "total_tokens_used":0,
-        "total_api_cost":0
-    }
-
     prompt_count=0
     blocked_prompt_count=0
     blocked_res_count=0
@@ -43,6 +35,8 @@ def main():
                 if prompt.lower()!="exit":
                     if len(prompt) > 0:
                         prompt_count+=1
+                        
+                        strt=time.time()
 
                         prompt_safe_check=CLIENT.interactions.create(
                             model=MODEL,
@@ -62,7 +56,6 @@ def main():
                                 print("\nPrompt Status: SAFE")
 
                                 hist.append({"type":"user_input", "content":[{"type":"text", "text":prompt}]})
-                                strt=time.time()
                                 
                                 interaction=CLIENT.interactions.create(
                                     model=MODEL,
@@ -70,8 +63,6 @@ def main():
                                 )
                                 
                                 if interaction:
-                                    res_times.append(time.time()-strt)
-                                    avg_response_time = sum(res_times)/len(res_times)
 
                                     res_safe_check=CLIENT.interactions.create(
                                         model=MODEL,
@@ -87,6 +78,9 @@ def main():
                                         res_safety=json.loads(res_safe_check.output_text)
 
                                         if res_safety['response'] == True:
+                                            res_times.append(time.time()-strt)
+                                            avg_response_time = sum(res_times)/len(res_times)
+
                                             print("\nResponse Status: SAFE")
                                             print("\nAI:",interaction.output_text)
 
