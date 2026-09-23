@@ -9,7 +9,7 @@ def main():
     try:
         CLIENT=genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
     except Exception:
-        print("Connection with the API failed.")
+        print("ERROR: Connection with the API failed.")
 
     RECORD_FILE="records.json"
     MODEL="gemini-3.5-flash-lite"
@@ -132,7 +132,7 @@ def main():
                 "avg_response_time": avg_response_time,
                 "total_estimated_api_cost": total_estimated_api_cost,
                 "total_blocked_prompt": blocked_prompt_count,
-                "total_blocked_response": blocked_res_count,
+                "total_blocked_response": blocked_prompt_count + blocked_res_count,
             }
         }
         with open(RECORD_FILE, "w", encoding="utf-8") as file:
