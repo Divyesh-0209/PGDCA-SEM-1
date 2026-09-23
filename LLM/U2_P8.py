@@ -132,7 +132,7 @@ def main():
                 "avg_response_time": avg_response_time,
                 "total_estimated_api_cost": total_estimated_api_cost,
                 "total_blocked_prompt": blocked_prompt_count,
-                "total_blocked_response": blocked_prompt_count + blocked_res_count,
+                "number_of_warning": blocked_prompt_count + blocked_res_count,
             }
         }
         with open(RECORD_FILE, "w", encoding="utf-8") as file:
