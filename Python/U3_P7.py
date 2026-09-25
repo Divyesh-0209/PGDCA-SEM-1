@@ -8,7 +8,7 @@ try:
     logging.basicConfig(
         format= "%(asctime)s %(name)s [%(levelname)s] %(message)s",
         level= logging.DEBUG,
-        handlers=[logging.FileHandler("__name__.log")],
+        handlers=[logging.FileHandler("U3_P7.log")],
         force= True
     )
 
