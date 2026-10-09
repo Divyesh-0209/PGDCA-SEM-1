@@ -82,9 +82,17 @@ try:
                 history_messages_key="history"
             )
 
-            res = stateful_chatbot.invoke({"input": input("\nUser: ")},
-                config=my_config)
-            print("AI:",res)
+            prompt = input("\nUser: ").strip()
+
+            if prompt == "" or prompt:
+                raise Exception("Invalid query! try again.")
+            else:
+                if prompt.lower() == "exit":
+                    break
+                else:
+                    res = stateful_chatbot.invoke({"input": prompt},
+                        config=my_config)
+                    print("AI:",res)
             
 except Exception as e:
     print("ERROR:",e)
