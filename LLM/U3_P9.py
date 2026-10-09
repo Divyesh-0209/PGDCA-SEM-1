@@ -84,7 +84,7 @@ try:
 
             prompt = input("\nUser: ").strip()
 
-            if prompt == "" or prompt:
+            if prompt == "" or not prompt:
                 raise Exception("Invalid query! try again.")
             else:
                 if prompt.lower() == "exit":
