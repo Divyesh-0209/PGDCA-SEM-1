@@ -18,7 +18,7 @@ async def main():
         LOG_FILE_HANDLER.setFormatter(log_formatter)
         logger.addHandler(LOG_FILE_HANDLER)
 
-        URL=input("Enter gemini API URL: ").strip()
+        URL=input("Enter API URL: ").strip()
 
         strt=time.time()
         logger.log(level=20,msg=URL)
